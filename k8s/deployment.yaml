@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-native-monitoring
+  labels:
+    app: cloud-native-monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloud-native-monitoring
+  template:
+    metadata:
+      labels:
+        app: cloud-native-monitoring
+    spec:
+      containers:
+        - name: monitoring-app
+          image: cloud-native-monitoring:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
