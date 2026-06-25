@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.env
+.env.*
+*.pem
+*.key
+kubeconfig
+*.tfstate
+*.tfstate.*
+docs/screenshots/*.png
