@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kin d: Deployment
 metadata:
   name: cloud-native-monitoring
   labels:
