@@ -1,4 +1,4 @@
-"""Create a Kubernetes Deployment and Service for the monitoring app. 
+"""Create a Kubernetes Deployment and Service for the monitoring app.
 
 Before running, set the image value, for example:
 export APP_IMAGE=<aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/cloud-native-monitoring-eks:latest
