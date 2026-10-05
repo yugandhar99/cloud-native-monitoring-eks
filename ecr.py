@@ -2,7 +2,7 @@ import os
 import boto3
 from botocore.exceptions import ClientError
 
-REPOSITORY_NAME = os.environ.get("ECR_REPOSITORY_NAME", "cloud-native-monitoring-eks") 
+REPOSITORY_NAME = os.environ.get("ECR_REPOSITORY_NAME", "cloud-native-monitoring-eks")
 REGION = os.environ.get("AWS_REGION", "us-east-1")
 
 ecr_client = boto3.client("ecr", region_name=REGION)
